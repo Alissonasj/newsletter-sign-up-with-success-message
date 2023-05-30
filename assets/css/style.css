@@ -1,0 +1,239 @@
+@import url('reset.css');
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf) format('ttf'),
+        url('../fonts/Roboto-Bold.ttf') format('ttf');
+}
+
+:root {
+    --prymary-color: #242945;
+    --secondary-color: white;
+    --tertiary-color: #64646d;
+
+    --ff: 'Roboto', sans-serif;
+}
+
+body {
+    background: #36384d;
+    font-family: var(--ff);
+}
+
+.main {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 62rem;
+    margin-inline: 2rem;
+    border-radius: 2rem;
+    background: white;
+}
+
+header {
+    display: none;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.section__col-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section__col-1 h1 {
+    font-size: 4.2rem;
+    font-weight: bold;
+    color: var(--prymary-color);
+}
+
+.section__col-1 p,
+.section__col-1 li {
+    font-size: 1.2rem;
+    color: var(--tertiary-color);
+}
+
+.section__col-1 li::before {
+    content: url('../images/icon-list.svg');
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form__div-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form label {
+    color: var(--prymary-color);
+    font-weight: bold;
+}
+
+.form input,
+.form button,
+#success-modal button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--tertiary-color);
+}
+
+.form input {
+    outline-style: none;
+}
+
+.form button,
+#success-modal button {
+    background: var(--prymary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.form button:hover,
+#success-modal button:hover {
+    background: linear-gradient(to right, #ff5379, #fe683e);
+    border-color: transparent;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+
+footer {
+    padding: 2rem 0;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.alissonasj {
+    text-decoration: underline;
+}
+
+/* Error classes */
+
+.error-message,
+.error-input::placeholder {
+    font-family: var(--ff);
+    font-weight: bold;
+    color: tomato;
+}
+
+.error-message {
+    display: none;
+}
+
+.error-input {
+    background: rgba(255, 99, 71, 0.5);
+    border: 0.1rem solid tomato !important;
+}
+
+/* Fade */
+
+#fade {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+#fade.hide,
+#success-modal.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#success-modal.hide {
+    top: 0;
+}
+
+#fade,
+#success-modal {
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Modal */
+
+#success-modal {
+    top: 25%;
+    background: var(--secondary-color);
+    max-width: 25rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-content span {
+    content: url('../images/icon-success.svg');
+    background-repeat: no-repeat;
+    width: 3rem;
+}
+
+.modal-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--prymary-color);
+    line-height: 1;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: var(--prymary-color);
+    line-height: 1.2;
+}
+
+@media (max-width: 450px) {
+    .container {
+        margin-inline: 0;
+        border-radius: 0;
+        height: 100vh;
+
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100vw;
+    }
+
+    .section__col-2 {
+        display: none;
+    }
+
+    header {
+        display: block; 
+        width: 100%;      
+    }
+}
+
+@media (max-width: 350px) {
+    .section__col-1 {
+        padding: 2rem;        
+    }
+}

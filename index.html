@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+
+        <link
+            rel="stylesheet"
+            href="assets/css/style.css"
+        />
+
+        <title>
+            Frontend Mentor | Newsletter sign-up form with success message
+        </title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="container">
+                <section class="section">
+                    <header><img src="assets/images/illustration-sign-up-mobile.svg" alt=""></header>
+                    <div class="section__col-1">
+                        <h1>Stay updated!</h1>
+                        <p>
+                            Join 60,000 + product managers receiving monthly
+                            updates on:
+                        </p>
+
+                        <ul>
+                            <li>Product discovery and building matters</li>
+                            <li>Measuring to ensure updates a success</li>
+                            <li>And much more!</li>
+                        </ul>
+
+                        <form
+                            class="form"
+                            novalidate
+                        >
+                            <div class="form__div-1">
+                                <label>Email address</label>
+                                <span class="error-message"
+                                    >Valid email required</span
+                                >
+                            </div>
+
+                            <input
+                                class="input-email"
+                                type="email"
+                                name="email"
+                                required
+                                placeholder="email@company.com"
+                            />
+
+                            <button
+                                type="submit"
+                                class="submit-button"
+                            >
+                                Subscribe to monthly newsletter
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="section__col-2">
+                        <img
+                            src="assets/images/illustration-sign-up-desktop.svg"
+                            alt="background image"
+                        />
+                    </div>
+                </section>
+            </div>
+            
+            <div id="fade" class="hide"></div>
+
+            <div id="success-modal" class="hide">
+                <div class="modal-content">
+                    <span></span>
+
+                    <h1>Thanks for subscribing!</h1>
+
+                    <p>
+                        A confirmation email has been to <strong></strong>[email]</strong>. Please open it
+                        and click the button inside to confirm your
+                        subscription.
+                    </p>
+
+                    <button type="button" id="close-modal">Dismiss message</button>
+                </div>
+            </div>
+            
+            <footer class="attribution">
+                Challenge by
+                <a
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    >Frontend Mentor</a
+                >. Coded by
+                <a
+                    href="https://github.com/Alissonasj"
+                    target="_blank"
+                    class="alissonasj"
+                    ><strong>Alisson Silva</strong></a
+                >.
+            </footer>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
